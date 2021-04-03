@@ -2,29 +2,30 @@ package com.company;
 
 public class Main {
 
-
     public static void main(String[] args) {
+
         createObject("Mars");
+        createObject("Saturn");
 
 
     }
 
-    protected static String createObject(String className) {
+    protected static Planets createObject(String className) {
         switch (className) {
             case "Mars":
                 Mars mars = new Mars(Color.RED, Size.SMALL, "Maybe");
                 mars.print();
-                break;
+                return mars;
             case "Saturn":
                 Saturn saturn = new Saturn(Color.BROWN, Size.BIGGEST, 5000);
                 saturn.print();
-                break;
+                return saturn;
             case "Earth":
                 Earth earth = new Earth(Color.MULTI, Size.MIDDLE, 80);
                 earth.print();
-                break;
+                return earth;
         }
-        return className;
+        return null;
     }
 }
 
